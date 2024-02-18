@@ -1,0 +1,61 @@
+[project]
+name = "token-val"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "fafs", email = "fernando.andeca@gmail.com"},
+]
+dependencies = [
+    "pycryptodome>=3.20.0",
+    "attrs>=23.2.0",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=8.0.1",
+    "pyright>=1.1.350",
+    "ruff>=0.2.2",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
+# asyncio_mode="auto"
+# required_plugins = pytest-asyncio
+
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 20
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
