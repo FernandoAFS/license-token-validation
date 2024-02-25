@@ -13,7 +13,8 @@ class MsgSigner:
     def sign(self, msg: bytes) -> bytes:
         hash_ = SHA256.new(data=msg)
         signer = DSS.new(self.key, self.mode)
-        return signer.sign(hash_)
+        signature = signer.sign(hash_)
+        return signature
 
 
 @attrs.frozen
