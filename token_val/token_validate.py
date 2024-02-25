@@ -4,8 +4,8 @@ import typing as t
 
 import attrs
 
-from src.token_val import environment as env
-from src.token_val import exceptions as excp
+from . import environment as env
+from . import exceptions as excp
 
 
 @attrs.frozen
